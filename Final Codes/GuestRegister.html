@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body { background-color: #d6c1de; text-align: center;}
+
+h1 { text-align:center; color: #39036b;  margin-top: 30px; margin-left: 40px}
+
+form { width: 60%; padding: 50px; height: 50%px; background-color: #ffffff; 
+text-align: left; margin-top: 20px; margin-bottom: 50px; margin-right: 50px;
+ margin-left: 70px; font-size: 15px; border: 1px solid #39036b;
+ display: inline-block;}
+
+
+
+input[type=reset], input[type=button] {
+  background-color: #ffffff;
+  color: #c5953a;
+  padding: 12px 20px;
+  border: 1.5px solid #c5953a;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 20px;
+  float: right;
+  font-size: 15px;
+  border-radius: 4px;
+  
+}
+
+input[type=submit]{
+background-color: #c5953a;
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 20px;
+  float: right;
+  font-size: 15px;
+  border-radius: 4px;
+}
+
+.button1 {
+  background-color: #c5953a; 
+  color: white; 
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 10px;
+}
+
+input, textarea{
+border-radius: 4px;
+border: 1.5px solid #c5953a;}
+
+.button1:hover{
+ 	background-color: white;
+ 	color: #c5953a;
+ 	border:1.5px solid #c5953a;
+ }
+
+.button:hover{
+	background-color: #c5953a;
+ 	color: white;
+}
+
+
+</style>
+<title>Guest Details</title>
+
+<script type="text/javascript">
+
+function validateForm()
+{
+	
+	if(document.GuestRegister.first_name.value==null||document.GuestRegister.first_name.value=="") {
+		alert("Please key-in First Name");
+			return false;
+	}
+	
+	if(document.GuestRegister.first_name.value==null||document.GuestRegister.last_name.value=="") {
+		alert("Please key-in Last Name");
+			return false;
+	}
+
+	if(document.GuestRegister.ic_no.value==null||document.GuestRegister.ic_no.value=="") {
+		alert("Please key-in Identity Card Number");
+			return false;
+	}
+	
+	if(document.GuestRegister.passport_no.value==null||document.GuestRegister.passport_no.value=="") {
+		alert("Please key-in Passport Number");
+			return false;
+	}
+	
+	if(document.GuestRegister.address.value==null||document.GuestRegister.address.value=="") {
+		alert("Please key-in Address");
+			return false;
+	}
+	
+	if(document.GuestRegister.email.value==null||document.GuestRegister.email.value=="") {
+		alert("Please key-in Email");
+			return false;
+	}
+	
+	if(document.GuestRegister.mobile_no.value==null||document.GuestRegister.mobile_no.value=="") {
+		alert("Please key-in Mobile Number");
+			return false;
+	}
+	
+	if(document.GuestRegister.guest_id.value==null||document.GuestRegister.guest_id.value=="") {
+		alert("Please key-in Guest ID");
+			return false;
+	}
+
+}
+</script>
+</head>
+<body>
+
+<h1> Guest Details</h1>
+
+
+<form name ="GuestRegister"action="GuestSubmit.jsp" onSubmit="return validateForm()"method ="post">
+
+<div class="col-25"><label>First Name: </label></div> 
+<div class="col-75"> <input class="text" type="text" name="first_name" size="50"/></div><br/>
+
+<div class="col-25"><label>Last Name: </label></div> 
+<div class="col-75"> <input class="text" type="text" name="last_name" size="50"/></div><br/>
+
+<div class="col-25"><label>Identity Card Number: </label></div> 
+<div class="col-75"><input class="text" type="text" name="ic_no" size="30"/></div><br/>
+
+<div class="col-25"><label>Passport Number: </label></div> 
+<div class="col-75"> 	<input class="text" type="text" name="passport_no" size="30"/>
+</div><br/>
+
+<div class="col-25"><label>Address: </label></div> 
+<div class="col-75"> 	<textarea class="text" type="text" name="address" size="1000" rows="4" cols="50"/></textarea>
+</div><br/>
+
+<div class="col-25"><label>Email: </label></div> 
+<div class="col-75"> 	<input class="text" type="text" name="email" size="50"/>
+</div><br/>
+
+<div class="col-25"><label>Mobile Number: </label></div> 
+<div class="col-75"> 	<input class="text" type="text" name="mobile_no" size="30"/>
+</div><br/>
+
+
+<div class="col-25"> <label>Guest ID: </label> </div>
+<div class="col-75"> <input class="text" type="text" name="guest_id" size="30"/></input>  </div><br/>
+
+	<input class="button1" type="submit" value="SAVE"/>
+	<a href="A_USER.html">
+    <input class="button" type="button" value="BACK" />
+    </a>
+	<input class="button" type="reset" value="RESET" />
+	<a href="GuestDetails.jsp">
+    <input class="button" type="button" value="LIST" />
+    </a>
+
+
+
+
+</form>
+
+
+
+

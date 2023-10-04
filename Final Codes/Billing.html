@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="BillDet.css" />
+
+<title>BILLING</title>
+
+<script type="text/javascript">
+function validateForm() {
+
+	if (document.myForm.reserve_id.value == null || document.myForm.reserve_id.value ==""){
+		alert("Reserve ID must be filled out");
+		return false;
+		}
+	if (document.myForm.guest_id.value == null || document.myForm.guest_id.value ==""){
+		alert("Guest ID must be filled out");
+		return false;
+		}
+	if ((document.myForm.item_id1.checked == false) && (document.myForm.item_id1.checked == false) && (document.myForm.item_id1.checked == false)){
+		alert ("Please check the Item box");
+		return false;
+	}
+	if (document.myForm.discount.value == null || document.myForm.discount.value ==""){
+		alert("Discount must be filled out");
+		return false;
+		}
+	if (document.myForm.payment_date.value == null || document.myForm.payment_date.value ==""){
+		alert("Payment Date must be filled out");
+		return false;
+		}
+	if (document.myForm.payment_mode.selectedIndex == 0){
+		alert ("Please select your Payment Method");
+		return false;
+	} else {
+		if (document.myForm.total_payment.value == null || document.myForm.total_payment.value ==""){
+			alert("Total Payment must be filled out");
+			return false;
+		}
+	} 
+}
+
+function goBack() {
+  	window.history.back();
+}
+</script>
+</head>
+
+<body>
+<form name ="myForm" action="Billing.jsp" onSubmit="return validateForm()" method ="post">
+<h1>BILLING</h1>
+<div class="container">
+	<div class="column">
+		<table>
+		<tr>
+			<td><strong>Bill No.:</strong></td><td></td><td><input type="text" name="bill_No" value="-" readonly></td>
+		</tr>
+		<tr>
+			<td><strong>Reserve ID:</strong></td><td></td><td><input type="text" name="reserve_id"></td>
+		</tr>
+		<tr>
+			<td><strong>Guest ID:</strong></td><td></td><td><input type="text" name="guest_id"></td>
+		</tr>
+		<tr>
+			<td><strong>Payment Date:</strong></td><td></td><td><input id ="datee" type="date" name="payment_date"></td>
+		</tr>
+		<tr>
+			<td><strong>Payment Method:</strong></td>
+		</tr>
+		<tr>
+			<td colspan="3"><select name= "payment_mode">
+				<option value="">Select Payment Method</option>
+				<option value="Cash">Cash</option>
+				<option value="Cheque">Cheque</option>
+				<option value="Debit / Credit Card">Debit/Credit Card</option>
+				<option value="Online Banking">Online Banking</option>
+				<option value="FPX">FPX</option>
+				</select></td>
+		</tr>
+		</table>
+	</div>
+	
+	<div class="vl"></div>
+	
+	<div class="column">
+		<table>
+		<tr>
+			<td><strong>Item:</strong></td><td></td>
+		</tr>
+		<tr>
+			<td><td><td><input  type="checkbox" name="item_id1" value="01" /> 01</td></tr>
+			<tr><td><td><td><input type="checkbox" name="item_id2" value="02" /> 02</td></tr>
+			<tr><td><td><td><input type="checkbox" name="item_id3" value="03" /> 03</td></tr>
+		</tr>
+		<tr>
+			<td><strong>Discount:</strong></td><td></td><td><input type="text" name="discount"></td>
+		</tr>
+		<tr>
+			<td><strong>Total Payment:</strong></td><td></td><td><input type="text" name="total_payment"></td>
+		</tr>
+		</table>
+	</div>
+
+</div>
+<div class="center">
+<p>
+	<input id="buttonbackreset" type="button" onclick="goBack()" value="BACK">
+	<input id="buttonbackreset" type="reset" name="Reset" value="RESET">
+	<input id="buttonsave" type="submit" name="save" value="SAVE">
+</p>
+</div>
+
+</form>
+</body>
+</html>

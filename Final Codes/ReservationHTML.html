@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body { background-color: #d6c1de; text-align: center;}
+
+h1 { text-align:center; color: #39036b;  margin-top: 30px; margin-left: 40px}
+
+form { width: 60%; padding: 50px; height: 400px; background-color: #ffffff; 
+text-align: left; margin-top: 20px; margin-bottom: 50px; margin-right: 50px;
+ margin-left: 70px; font-size: 15px; border: 1px solid #39036b;
+ display: inline-block;}
+
+
+
+input[type=reset], input[type=button] {
+  background-color: #ffffff;
+  color: #c5953a;
+  padding: 12px 20px;
+  border: 1px solid #c5953a;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 20px;
+  float: right;
+  font-size: 15px;
+  
+}
+
+input[type=submit]{
+background-color: #c5953a;
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 20px;
+  float: right;
+  font-size: 15px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  font-weight: bold;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+input, textarea{
+border-radius: 4px;
+border: 1.5px solid #c5953a;}
+
+.button1:hover{
+ 	background-color: white;
+ 	color: #c5953a;
+ 	border:1.5px solid #c5953a;
+ }
+
+.button:hover{
+	background-color: #c5953a;
+ 	color: white;
+}
+
+</style>
+<title>Reservation Details</title>
+
+<script type="text/javascript">
+function validateRForm(){
+	
+	if (document.RForm.Reserve_ID.value == "" )
+	{
+	alert("Reservation ID cannot be empty.");
+	return false;
+	}
+	
+	if (document.RForm.No_Of_Adult.selectedIndex == 0 ){
+			alert ( "Please choose number of adults." );
+			return false;
+			} 
+	
+	if (document.RForm.No_Of_Children.selectedIndex == 0 ){
+			alert ( "Please choose number of children." );
+			return false;
+			} 
+	
+	if (document.RForm.Checkin_Date.value == "" )
+	{
+	alert("Check-in date cannot be empty.");
+	return false;
+	}
+	
+	if (document.RForm.Checkout_Date.value == "" )
+	{
+	alert("Check-out date cannot be empty.");
+	return false;
+	}
+	
+	
+}
+
+</script>
+
+</head>
+<body>
+
+<h1> Reservation Details</h1>
+
+<form name ="RForm" action="ReservationJSP.jsp" onSubmit="return validateRForm()" method ="post">
+<div class="col-25"><label for="Reserve_ID">Reservation ID: </label></div> 
+<div class="col-75"> <input type="text" name="Reserve_ID" /></div><br/>
+
+<div class="col-25"> <label for="No_Of_Adult">No. of Adult: </label> </div> <div class="col-75"> <select name="No_Of_Adult"> 
+  <option> </option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+</select> </div><br/>
+
+<div class="col-25"> <label for="No_Of_Children">No. of Children: </label> </div> <div class="col-75"> <select name="No_Of_Children"> 
+  <option> </option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+</select> </div><br/>
+
+
+<div class="col-25"><label for="Reserve_Date">Reservation date: </label></div> 
+<div class="col-75"> <input type="text" id="Reserve_Date" name="Reserve_Date" placeholder="DD/MM/YYYY" style="width:160px"/></div><br/>
+
+<div class="col-25"><label for="Checkin_Date">Check-in date: </label></div> 
+<div class="col-75"> <input type="text" id="Checkin_Date" name="Checkin_Date" placeholder="DD/MM/YYYY" style="width:160px"/></div><br/>
+
+<div class="col-25"><label for="Checkout_Date">Check-out date: </label></div> 
+<div class="col-75"> <input type="text" id="Checkout_Date" name="Checkout_Date" placeholder="DD/MM/YYYY" style="width:160px"/></div><br/>
+
+<div class="col-25"><label for="Reserve_Time">Reservation time: </label></div> 
+<div class="col-75"> <input type="text" id="Reserve_Time" name="Reserve_Time" placeholder="HH:MM" style="width:50px"/></div><br/>
+
+<div class="col-25"> <label for="Special_Req">Special request: </label> </div>
+<div class="col-75"> <textarea id="Special_Req" name="Special_Req" placeholder="Write something.." style="width:300px; height: 150px"></textarea>  </div><br/>
+
+
+
+<input class="button1" type="submit" name ="submit" value="SAVE">
+<a href="A_USER.html">
+    <input class="button" type="button" value="BACK" />
+    </a>
+<input class="button" type="reset" value="RESET">
+<a href="ReservationUpdate.jsp">
+    <input class="button" type="button" value="LIST" />
+    </a>
+
+
+
+</form>
+
+</body>
+</html>
+
+

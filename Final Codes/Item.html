@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="BillDet.css" />
+
+<title> ADD ITEM </title>
+<script type="text/javascript">
+function validateForm() {
+
+	if (document.myForm.item_id.value == null || document.myForm.item_id.value ==""){
+		alert("ID must be filled out");
+		return false;
+		}
+	if (document.myForm.item_name.value == null || document.myForm.item_name.value ==""){
+		alert("Name must be filled out");
+		return false;
+	}else{
+		if (document.myForm.item_price.value == null || document.myForm.item_price.value ==""){
+		alert("Price must be filled out");
+		return false;
+		}
+	}
+
+}
+
+function goBack() {
+  	window.history.back();
+}
+</script>
+</head>
+<body>
+<form name ="myForm" action="Item.jsp" onSubmit="return validateForm()" method ="post">
+
+<h1>ADD ITEM</h1>
+	<div class="container">
+
+		<table>
+		<tr>
+			<td><strong>ID:</strong></td>
+			
+			<td><input type="text" name="item_id"></td>
+		</tr>
+		<tr>
+			<td><strong>NAME:</strong></td>
+			
+			<td><input type="text" name="item_name"></td>
+		</tr>
+		<tr>
+			<td><strong>PRICE:</strong></td>
+			<td><input type="text" name="item_price"></td>
+		</tr>
+		</table>
+
+</div>
+
+<div class="center">
+<p>
+	<input id="buttonbackreset" type="button" onclick="goBack()" value="BACK">
+	<input id="buttonbackreset" type="reset" name="Reset" value="RESET">
+	<input id="buttonsave" type="submit" name="save" value="SAVE">
+</p>
+</div>
+</form>
+</body>
+</html>

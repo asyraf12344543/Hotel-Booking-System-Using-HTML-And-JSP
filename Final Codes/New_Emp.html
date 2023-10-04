@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel = "stylesheet" type="text/css" href="Colour_Purple.css" />
+<title>New_Employee</title>
+
+<script type="text/javascript">
+	function validateForm()
+	{
+		// Job ID Validation (Text Field)
+		if (document.NewEmpForm.job_ID.value == null || document.NewEmpForm.job_ID.value == "") {
+			alert("Please key-in Job ID");
+			return false;
+		}
+		// ID Validation (Text Field)
+		if (document.NewEmpForm.ID.value == null || document.NewEmpForm.ID.value == "") {
+			alert("Please key-in ID");
+			return false;
+		}
+		// First Name Validation (Text Field)
+		if (document.NewEmpForm.firstname.value == null || document.NewEmpForm.firstname.value =="") {
+			alert("Please key-in First Name");
+			return false;
+		}
+		// Last Name Validation (Text Field)
+		if (document.NewEmpForm.lastname.value == null || document.NewEmpForm.lastname.value =="") {
+			alert("Please key-in Last Name");
+			return false;
+		}
+		// Gender Validation (Radio Button)
+		if ((document.NewEmpForm.gender[0].checked == false) && (document.NewEmpForm.gender[1].checked == false)) 
+		{
+			alert("Please Choose Gender");
+			return false;
+		}
+		// Phone Number Validation (Text Field)
+		if (document.NewEmpForm.phone_num.value == null || document.NewEmpForm.phone_num.value =="") {
+			alert("Please key-in Phone Number");
+			return false;
+		}
+		// Address Validation (Text Field)
+		if (document.NewEmpForm.address.value == null || document.NewEmpForm.address.value =="") {
+			alert("Please key-in Address");
+			return false;
+		}
+		// Email Validation (Email)
+		if (document.NewEmpForm.email.value == null || document.NewEmpForm.email.value =="") {
+			alert("Please key-in Email");
+			return false;
+		}
+		// Vaccine Type Validation (Text Field+dropdown)
+		if (document.NewEmpForm.vacc_type.selectedIndex == 0) {
+			alert("Please Choose Vaccine Type");
+			return false;
+		}
+		// 1st Dose Date Validation (Date/TextField)
+		if (document.NewEmpForm.vacc_first.value == null || document.NewEmpForm.vacc_first.value == "") {
+			alert("Please key-in First Dose Date");
+			return false;
+		}
+		// 2nd Dose Date Validation (Date/TextField)
+		if (document.NewEmpForm.vacc_second.value == null || document.NewEmpForm.vacc_second.value == "") {
+			alert("Please key-in Second Dose Date");
+			return false;
+		}
+		// Hire Date Validation (Date/TextField)
+		if (document.NewEmpForm.hire_date.value == null || document.NewEmpForm.hire_date.value == "") {
+			alert("Please key-in Hire Date");
+			return false;
+		}
+		// Salary Validation (Text Field)
+		if (document.NewEmpForm.salary.value == null || document.NewEmpForm.salary.value == "") 
+		{
+			alert("Please key-in Salary");
+			return false;
+		}
+		if (document.NewEmpForm.password1.value == null || document.NewEmpForm.password1.value =="") 
+		{
+			alert("Please key-in password");
+			return false;
+		} 
+		else 
+		{ 
+			if (document.NewEmpForm.password2.value == null || document.NewEmpForm.password2.value =="")
+			{
+				alert("Please confirm password");
+				return false;
+			} 
+			else {
+				if (document.NewEmpForm.password1.value != document.NewEmpForm.password2.value) 
+				{
+					alert("Password does not match");
+					return false;
+				}	 
+			} 
+
+		}
+		
+	
+	}
+	function goBack() {
+		  window.history.back();
+		}
+</script>
+</head>
+<body>
+<form name ="NewEmpForm" action="New_Emp.jsp" onSubmit="return validateForm()" method ="post">
+
+<h2>Employee Details</h2>
+<h4><b>New Employee</b></h4>
+<div>
+<table>	
+	<tr>
+		<th align="left">Job ID	:</th>
+		<td><input type = "text" name="job_ID"></td>
+	</tr>
+	<tr>
+		<th align="left">ID	:</th>
+		<td><input type = "text" name="ID" ></td>
+	</tr>
+	<tr>
+		<th align="left">First Name	:</th>
+		<td><input type = "text" name="firstname"></td>
+	</tr>
+	<tr>
+		<th align="left">Last Name	:</th>
+		<td><input type = "text" name = "lastname" ></td>
+	</tr>
+	<tr>
+		<th align="left">Gender	:</th>
+		<td><input type="radio" name="gender" value="Male">Male
+			<input type="radio" name="gender" value="Female">Female
+		</td>
+		
+		<th align="left">Phone Number	:</th>
+		<td><input type = "text" name = "phone_num"></td>
+	</tr>
+	<tr>
+		<th align="left"  >Address	:</th>
+		<td><input type = "text" name = "address" style = "width:150%; height:100px"></td>
+	</tr>
+	<tr>
+		<th align="left">Email	:</th>
+		<td><input type = "email" name = "email" style = "width:150%"></td>
+	</tr>
+	<tr>
+		<th align="left" >Vaccine:	</th>
+		<td><select name="vacc_type" onchange='Others(this.value);'> 
+				<option style="width: 50%" selected disabled>Pick Type</option>
+				<option value="AstraZeneca">AstraZeneca</option>
+				<option value="Sinovac">Sinovac</option>
+				<option value="Pfizer">Pfizer</option>
+			</select>
+		</td>
+
+		<td align="left"><input type = "text" name = "vacc_first" placeholder="First Dose" ></td>
+		<td align="left"><input type = "text" name = "vacc_second" placeholder="Second  Dose" ></td>
+	</tr>
+	<tr>
+		<th align="left">Hire Date: </th>
+		<td><input type = "text" name = "hire_date"></td>
+		
+		<th align="left">Salary: </th>
+		<td><input type = "text" name = "salary"></td>
+	</tr>
+	<tr>
+		<th align="left">Account Password	:</th>
+		<td><input type = "password" name = "password1" style = "width:150%" placeholder="8 Characters Only">
+		<input type = "password" name = "password2" placeholder="Confirm Your Password" style = "width:150%"/></td>
+	</tr>
+	<tr>
+		<td></td><td></td><td></td>
+		<td align="right">
+		<input class="button" name = "Reset" type="reset" value="Reset">
+		<input class="button" name = "Back" type="button" value="Back" onclick="goBack()">
+		<input class="button_submit" name = "Submit" type="submit" value="SUBMIT" id="submit">
+		</td>	
+	</tr>
+	
+
+</table>
+	
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,77 @@
+@charset "ISO-8859-1";
+body { background-color:#d6c1de;}
+h2{text-decoration: underline;}
+div {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #39036b;
+}
+table{border-spacing: 2.5px;
+border-color: #c5953a;}
+
+.center {
+  margin: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.button_submit{
+	width: 32%; 
+	background-color: #c5953a; 
+	color: white; 
+	padding: 10px 10px;
+	border: 1.5px solid #c5953a; 
+	border-radius: 6px; 
+	cursor: pointer;
+}
+.button_submit:hover{
+ 	background-color: white;
+ 	color: #c5953a;
+ }
+.button, .delete{
+	width: 32%; 
+	background-color: white; 
+	color: #c5953a; 
+	padding: 10px 10px;
+	border: 1.5px solid #c5953a; 
+	border-radius: 6px; 
+	cursor: pointer;
+}
+.button:hover, .delete:hover{
+ 	background-color: #c5953a;
+ 	color: white;
+ }
+input[type=text], input[type=date], input[type=email],input[type=date], input[type=password], select {
+  width: 80%;
+  height: 8%;
+  padding: 12px 50px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1.5px solid #c5953a;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/*
+input[type=submit]:hover {
+  background: white;
+  color: #c5953a;
+}
+input[type=submit],  select {
+  width: 40%;
+  background-color: #c5953a;
+  color: white;
+  padding: 14px 20px;
+  border: 1.5px solid #c5953a;
+  margin: 8px 0;
+  border-radius: 6px;
+  cursor: pointer;
+}*/
+
+
+
+
+

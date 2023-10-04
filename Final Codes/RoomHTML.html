@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body { background-color: #d6c1de; text-align: center;}
+
+h1 { text-align:center; color: #39036b;  margin-top: 30px; margin-left: 40px}
+
+form { width: 60%; padding: 50px; height: 400px; background-color: #ffffff; 
+text-align: left; margin-top: 20px; margin-bottom: 50px; margin-right: 50px;
+ margin-left: 70px;  font-size: 15px; border: 1px solid #39036b;
+ display: inline-block;}
+
+
+
+input[type=reset], input[type=button] {
+  background-color: #ffffff;
+  color: #c5953a;
+  padding: 12px 20px;
+  border: 1.5px solid #c5953a;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 20px;
+  float: right;
+  font-size: 15px;
+  border-radius: 4px;
+  
+}
+
+input[type=submit]{
+background-color: #c5953a;
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 20px;
+  float: right;
+  font-size: 15px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  font-weight: bold;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+input{
+border-radius: 4px;
+border: 1.5px solid #c5953a;}
+
+.button1:hover{
+ 	background-color: white;
+ 	color: #c5953a;
+ 	border:1.5px solid #c5953a;
+ }
+
+.button:hover{
+	background-color: #c5953a;
+ 	color: white;
+}
+
+</style>
+<title>Room Details</title>
+
+<script type="text/javascript">
+function validateForm(){
+	
+	if (document.roomform.Reserve_ID.value == "" ){
+		alert("Reservation ID cannot be empty.");
+		return false;
+		}
+	
+	if (document.roomform.Room_No.value == "" ){
+	alert("Room no. cannot be empty.");
+	return false;
+	}
+	
+	if ( document.roomform.Price.selectedIndex == 0 )
+	{
+	alert ( "Please select a price." );
+	return false;
+	}
+	
+	if ((document.roomform.Bed_Qty[0].checked == false ) &&
+			(document.roomform.Bed_Qty[1].checked == false ) 
+			&& (document.roomform.Bed_Qty[2].checked == false))
+			{
+			alert ("Please choose bed quantity.");
+			return false;
+			} 
+	
+	if (( document.roomform.Availability[0].checked == false ) &&
+			( document.roomform.Availability[1].checked == false ))
+			{
+			alert ( "Please choose availability." );
+			return false;
+			} 
+	
+	
+}
+
+</script>
+</head>
+<body>
+
+<h1> Room Details</h1>
+
+<form name ="roomform" action="RoomJSP.jsp" onSubmit="return validateForm()" method ="post">
+
+<div class="col-25"><label for="Reserve_ID">Reservation ID: </label></div> 
+<div class="col-75"> <input type="text" name="Reserve_ID" /></div><br/>
+
+<div class="col-25"><label for="Room_No">Room no.: </label></div> 
+<div class="col-75"> <input type="text" name="Room_No" /></div><br/>
+
+<div class="col-25"> <label for="Price">Price: </label> </div> <div class="col-75"> <select name="Price"> 
+  <option>Select price</option>
+  <option value="120">RM 120</option>
+  <option value="170">RM 170</option>
+  <option value="210">RM 210</option>
+</select> </div><br/>
+
+<div class="col-25"> <label for="Bed_Qty">Bed quantity: </label> </div>
+<div class="col-75"> <input type="radio" name="Bed_Qty" value="1">1<br/>
+<input type="radio" name="Bed_Qty" value="2">2<br/>
+<input type="radio" name="Bed_Qty" value="3">3<br/></div>
+
+<div class="col-25"> <label for="Availability">Availability: </label> </div>
+<div class="col-75"> <input type="radio" name="Availability" value="Yes">Yes<br/>
+<input type="radio" name="Availability" value="No">No<br/></div>
+
+<div class="col-25"> <label for="Description">Description: </label> </div>
+<div class="col-75"> <input name="Description" placeholder="Write something..." style="width:300px; height: 150px"></input>  </div><br/>
+
+<input class="button1" type="submit" name ="submit" value="SAVE">
+<a href="A_USER.html">
+    <input class="button" type="button" value="BACK" />
+    </a>
+<input class="button" type="reset" value="RESET">
+<a href="RoomDetailsUpdate.jsp">
+    <input class="button" type="button" value="LIST" />
+    </a>
+
+
+
+
+
+</form>
